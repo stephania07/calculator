@@ -1,0 +1,26 @@
+{
+  "name": "calculator",
+  "version": "0.1.0",
+  "description": "Cohort 7 Calculator App",
+  "main": "index.html",
+  "authors": [
+    "Eliza Marcum"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec",
+    "specs"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.9.2"
+  }
+}

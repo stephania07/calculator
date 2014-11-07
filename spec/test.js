@@ -4,6 +4,25 @@
   'use strict';
 
   describe('Entering numbers', function(){
+
+    describe('displayoutput', function(){
+      it('should return the value of the display', function(){
+        $('#displayoutput').val(1.23);
+        assert.equal(displayOutput(), 1.23);
+
+        $('#displayoutput').val(2.34);
+        assert.equal(displayOutput(), 2.34);
+      })
+    })
+
+    describe('press', function(){
+      it('should display the number pressed', function(){
+        assert.equal(displayOutput(), "");
+        press(1);
+        assert.equal(displayOutput(), 1);
+      })
+    })
+
     describe('Entering the decimal number 7 . 8 9', function(){
       it('should display 7.89', function(){
         press(7);
@@ -49,12 +68,22 @@
     });
     describe('1 + 1 =', function(){
       it('should be 2', function () {
-        assert(false);
+        press(1);
+        press('+');
+        press(1);
+        press('=');
+        assert.equal(displayOutput(), '2');
       });
     });
-    describe('. 9 + . 1 =', function(){
-      it('should be 1', function () {
-        assert(false);
+    describe('. 1 + . 2 =', function(){
+      it('should be 0.3', function () {
+        press('.');
+        press(1);
+        press('+');
+        press('.');
+        press(2);
+        press('=');
+        assert.equal(displayOutput(), '0.3');
       });
     });
   });

@@ -8,7 +8,7 @@ function press(buttonValue){
 
   switch (buttonValue) {
     case '+':
-      prior += +$('#displayoutput').val();
+      prior += $('#displayoutput').val() * 1;
       $('#displayoutput').val('');
       break;
 

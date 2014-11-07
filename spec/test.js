@@ -4,7 +4,7 @@
   'use strict';
 
   beforeEach(function(){
-    $('#displayoutput').val("");
+    $('#displayoutput').val('');
   });
 
   describe('Entering numbers', function(){
@@ -21,7 +21,7 @@
 
     describe('press', function(){
       it('should display the number pressed', function(){
-        assert.equal(displayOutput(), "");
+        assert.equal(displayOutput(), '');
         press(1);
         assert.equal(displayOutput(), 1);
       })
@@ -50,7 +50,7 @@
         press('+');
         press(2);
         press('=');
-        assert.equal(displayOutput(), "10.89");
+        assert.equal(displayOutput(), '10.89');
       });
     });
     describe('7 . 8 9 + 1 . 0 0 + 2 =', function(){

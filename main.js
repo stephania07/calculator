@@ -1,5 +1,5 @@
 function displayOutput(){
-  return $('#displayoutput').val()
+  return $('#displayoutput').val();
 }
 
 var prior = 0;
@@ -7,34 +7,34 @@ var prior = 0;
 function press(buttonValue){
 
   switch (buttonValue) {
-    case "+":
+    case '+':
       prior += +$('#displayoutput').val();
-      $('#displayoutput').val('')
+      $('#displayoutput').val('');
       break;
 
-    case "-":
+    case '-':
       // handle -
       break;
 
-    case "*":
+    case '*':
       // handle *
       break;
 
-    case "/":
+    case '/':
       // handle /
       break;
 
-    case "C":
+    case 'C':
       // handle C
       break;
 
-    case "=":
+    case '=':
       prior += $('#displayoutput').val() * 1;
       $('#displayoutput').val(prior);
       prior = 0;
       break;
 
-    case "+/-":
+    case '+/-':
       // handle +/-
       break;
 

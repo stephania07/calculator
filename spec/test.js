@@ -58,7 +58,7 @@
         press(7);
         press('.');
         press(8);
-        press(9');
+        press('9');
         press('+');
         press(1);
         press('.');

@@ -39,7 +39,7 @@ function press(buttonValue){
       break;
 
     default:
-      var current =  $('#displayoutput').val();
+      var current = $('#displayoutput').val();
       $('#displayoutput').val(current += buttonValue);
   }
 }

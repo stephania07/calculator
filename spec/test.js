@@ -3,6 +3,10 @@
 ;(function(){
   'use strict';
 
+  beforeEach(function(){
+    $('#displayoutput').val("");
+  });
+
   describe('Entering numbers', function(){
 
     describe('displayoutput', function(){

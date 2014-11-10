@@ -2,13 +2,27 @@ function displayOutput(){
   return $('#displayoutput').val();
 }
 
-var prior = 0;
+var previousResult = 0;
+var nextOperation;
+
+function add(a, b){
+  return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+}
+
+function multiply(a, b){
+  return a * b;
+}
+
+function toNum(string){
+  return string * 1;
+}
 
 function press(buttonValue){
 
   switch (buttonValue) {
     case '+':
-      prior += $('#displayoutput').val() * 1;
+      previousResult += toNum($('#displayoutput').val());
+      nextOperation = add;
       $('#displayoutput').val('');
       break;
 
@@ -17,7 +31,9 @@ function press(buttonValue){
       break;
 
     case '*':
-      // handle *
+      previousResult = toNum($('#displayoutput').val());
+      nextOperation = multiply;
+      $('#displayoutput').val('');
       break;
 
     case '/':
@@ -29,9 +45,9 @@ function press(buttonValue){
       break;
 
     case '=':
-      prior += $('#displayoutput').val() * 1;
-      $('#displayoutput').val(prior);
-      prior = 0;
+      previousResult = nextOperation(previousResult, toNum($('#displayoutput').val()));
+      $('#displayoutput').val(previousResult);
+      previousResult = 0;
       break;
 
     case '+/-':
@@ -40,6 +56,6 @@ function press(buttonValue){
 
     default:
       var current = $('#displayoutput').val();
-      $('#displayoutput').val(current += buttonValue);
+      $('#displayoutput').val(current + buttonValue);
   }
 }

@@ -4,6 +4,8 @@
   'use strict';
 
   beforeEach(function(){
+    previousResult = undefined;
+    nextOperation = undefined;
     $('#displayoutput').val('');
   });
 
@@ -69,7 +71,7 @@
 
     describe('0 * 3 =', function(){
       it('should be .0', function(){
-        type(0, '*', 3);
+        type(0, '*', 3, '=');
         assert.equal(displayOutput(), '0');
       });
     });
@@ -94,12 +96,21 @@
         assert.equal(displayOutput(), '24');
       });
     });
+
     describe('3 * 4 + 2 =', function(){
       it('should be 14', function(){
         type(3, '*', 4, '+', 2, '=')
         assert.equal(displayOutput(), '14');
       });
     });
+
+    describe('7 + 6 * 5 =', function(){
+      it('should be 65', function(){
+        type(7, '+', 6, '*', 5, '=')
+        assert.equal(displayOutput(), '65');
+      });
+    });
+
     describe('3 * 0 * 2 =', function(){
       it('should be 0', function(){
         type(3, '*', 0, '*', 2, '=')
@@ -113,6 +124,24 @@
       it('should be 10.89', function () {
         type(7, '.', 8, 9, '+', 1, '+', 2, '=');
         assert.equal(displayOutput(), '10.89');
+      });
+    });
+    xdescribe('7 . 8 9 + 1 = + 2 =', function(){
+      it('should be 10.89', function () {
+        type(7, '.', 8, 9, '+', 1, '=', '+', 2, '=');
+        assert.equal(displayOutput(), '10.89');
+      });
+    });
+    describe('7 . 8 9 + 4 + 2 =', function(){
+      it('should be 13.89', function () {
+        type(7, '.', 8, 9, '+', 4, '+', 2, '=');
+        assert.equal(displayOutput(), '13.89');
+      });
+    });
+    describe('7 . 8 9 + 1 . 0 5 + 2 =', function(){
+      it('should be 10.94', function () {
+        type(7, '.', 8, 9, '+', 1, '.', 0, 5, '+', 2, '=');
+        assert.equal(displayOutput(), '10.94');
       });
     });
     describe('7 . 8 9 + 1 . 0 0 + 2 =', function(){

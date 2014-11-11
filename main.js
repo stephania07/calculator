@@ -16,6 +16,10 @@ function add(a, b){
   return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
 }
 
+function subtract(a,b){
+	return a - b;
+}
+
 function multiply(a, b){
   return a * b;
 }
@@ -57,9 +61,9 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case '-':
-      // handle -
-			
-			
+      calculate();
+			nextOperation = subtract;
+			$('#displayoutput').val('');
       break;
     case '*':
       calculate();

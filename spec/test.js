@@ -207,7 +207,51 @@
       });
     });
   });
-    describe('Division', function () {
+
+	describe('Subtraction', function () {
+    describe('5 - 3 =', function(){
+      it('should be 2', function () {
+        type(5, '-', 3, '=')
+        assert.equal(displayOutput(), '2');
+      });
+    });
+    describe('1 - . 2 = 0.8', function(){
+      it('should be 0.8', function(){
+        type(1, '-', '.', 2, '=')
+        assert.equal(displayOutput(), '0.8');
+      });
+    });
+
+    describe('. 1 2 5 - . 5 =', function(){
+      it('should be -0.375', function(){
+        type('.', 1, 2, 5, '-', '.', 5, '=')
+        assert.equal(displayOutput(), '-0.375');
+      });
+    });
+
+    describe('0 - 3 =', function(){
+      it('should be -3', function(){
+        type(0, '-', 3, '=');
+        assert.equal(displayOutput(), '-3');
+      });
+    });
+
+    describe('7 - 2 + 4 =', function(){
+      it('should be 9', function(){
+        type(7, '-', 2, '+', 4, '=')
+        assert.equal(displayOutput(), '9');
+      });
+		});
+
+    describe('3 * 5 - 8 = ', function(){
+      it('should be 7', function(){
+        type(3, '*', 5, '-', 8, '=')
+        assert.equal(displayOutput(), '7');
+			});
+		});
+	});
+    
+	describe('Division', function () {
     describe('7 . 8 9  / 1 / 2 =', function(){
       it('should be 4.89', function () {
         type(7, '.', 8, 9, '/', 1, '/', 2, '=');

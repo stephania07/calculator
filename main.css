@@ -1,0 +1,36 @@
+h1 {
+text-align: center;
+}
+
+.calc {
+margin: 60px 450px;				
+height: 450px;
+width: 350px;
+border: solid black 2px;
+background-color: lightblue;
+border-radius: 5px;
+}
+
+input.number {
+height: 40px;
+width: 200px;
+}
+
+input {
+height: 50px;
+width: 50px;
+
+}
+
+div {
+padding-left: 70px;
+}
+
+.operators input {
+background-color: #D6F32C;
+
+}
+.display {
+background-color: #CCC;
+
+}

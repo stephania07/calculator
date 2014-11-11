@@ -207,4 +207,64 @@
       });
     });
   });
+    describe('Division', function () {
+    describe('7 . 8 9  / 1 / 2 =', function(){
+      it('should be 4.89', function () {
+        type(7, '.', 8, 9, '/', 1, '/', 2, '=');
+        assert.equal(displayOutput(), '3.945');
+      });
+    });
+    describe('7 . 8 9 / 4 / 2 =', function(){
+      it('should be 0.98625', function () {
+        type(7, '.', 8, 9, '/', 4, '/', 2, '=');
+        assert.equal(displayOutput(), '0.98625');
+      });
+    });
+    describe('7 . 8 9 /1 . 0 5 / 2 =', function(){
+      it('should be 3.757142857142', function() {
+        type(7, '.', 8, 9, '/', 1, '.', 0, 5, '/', 2, '=');
+        assert.equal(displayOutput(), '3.757142857142');
+      });
+    });
+		describe('8 / 4 * 2 = ', function() {
+		  it('should be 4', function() {
+			type(8, '/', 4, '*', 2, '=');
+			assert.equal(displayOutput(), '4');
+			});
+		});
+		describe('. 1 2 5 / .5 = ', function(){
+		  it('should be 0.25', function() {
+		    type(0, '.', 1, 2, 5, '/', '.', 5, '=');
+			assert.equal(displayOutput(), '0.25');
+	  	}); 
+     });
+		});
+		describe('Clear', function() {
+		describe('0', function(){
+		  it('should be 0', function() {
+		    type('C');
+			  assert.equal(displayOutput(), '0');	
+			});
+		 });
+		describe('display clear', function() {
+		  it('should clear 8', function() {
+			  type('C');
+				assert.equal(displayOutput(), '0');
+			});
+		 });
+		}); 
+		describe('ChangeValue', function() {
+		describe('+/-', function() {
+		  it('should change display value', function() {
+			  type('+/-');
+				assert.equal(displayOutput(), '-');
+			});
+		});
+		describe('5 +/- ', function() {
+		  it('should be -5', function() {
+			  type(5, '+/-');
+				assert.equal(displayOutput(), '-5');
+			});
+		});
+  });
 })();

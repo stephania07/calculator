@@ -1,3 +1,10 @@
+/*$(document).ready(function(){
+var $body = document.getElementById("main");
+$body.
+	displayOutput();
+
+});*/
+
 function displayOutput(){
   return $('#displayoutput').val();
 }
@@ -13,6 +20,10 @@ function multiply(a, b){
   return a * b;
 }
 
+function divide(a, b) {
+  return a  / b;
+}
+
 function currentValue(string){
   return $('#displayoutput').val() * 1;
 }
@@ -24,6 +35,19 @@ function calculate(){
     previousResult = currentValue();
   }
 }
+				
+
+function clear(){
+   return 0;
+}
+
+function changeValue() {
+  if($('#displayoutput').val() > -1){
+	  return $('#displayoutput').val() + '-';
+	}else{
+	  return $('#displayoutput').val();
+	}
+}
 
 function press(buttonValue){
   switch (buttonValue) {
@@ -34,6 +58,8 @@ function press(buttonValue){
       break;
     case '-':
       // handle -
+			
+			
       break;
     case '*':
       calculate();
@@ -41,20 +67,27 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case '/':
-      // handle /
+      calculate();
+			nextOperation = divide;
+			$('#displayoutput').val('');
       break;
     case 'C':
-      // handle C
+      clear();
+      $('#displayoutput').val(0);			
       break;
     case '=':
       calculate();
-      $('#displayoutput').val(previousResult);
+      $('#displayoutput').val(roundNumber(previousResult));
       break;
     case '+/-':
-      // handle +/-
+     changeValue();
+		 $('#displayoutput').val('-');
       break;
     default:
       var current = $('#displayoutput').val();
       $('#displayoutput').val(current + buttonValue);
   }
+}
+function roundNumber(number) {
+  return Math.floor(number * 1000000000000)/1000000000000;
 }

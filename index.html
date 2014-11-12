@@ -8,48 +8,51 @@
     <link rel="stylesheet" href="bower_components/mocha/mocha.css">
     <link rel="stylesheet" href="main.css">
   </head>
-  <body id="main">
+  <body>
 	<h1> Calculator </h1>
-    <section class="calc">
-      <br>
-      <div class="display">
-          <input  value='' class='number'></input>
-      </div>
-      <br>
-      <div class="operators"> 
-        <input type='button' value='+'></input>
-        <input type='button' value='-'></input>
-        <input type='button' value='*'></input>
-        <input type='button' value='/'></input>
-      </div>
-      <br>
-      <div class="numbers">
-        <input type='button'value='7'></input>
-        <input type='button' value='8'></input>
-        <input type='button' value='9'></input>
-        
-        <br>
-        <input type='button' value='4'></input>
-        <input type='button' value='5'></input>
-        <input type='button' value='6'></input>
-        <br>
-        <input type='button' value='1'></input>
-        <input type='button' value='2'></input>
-        <input type='button' value='3'></input>
-        <br>
-        <input type='button' value='0'></input>
-        <input type='button' value='.'></input>
-        <br>
-       </div>
-        <br>
-       <div class="helpers">
-        <input type='button' value='+/-'></input>
-        
-        <input type='button' value='c'></input>
-        <input type='button' value='='></input>   
-       </div>             
+     <section class="calc">
+     
+	    <table >
+      <tr class="display">
+				<input id="displayoutput">
+      </tr>
+       <section id="button">
+      <tr class="operators"> 
+			  <td><button name = 'plus' class='operator' value='+'>+</button></td>
+			  <td><button name = 'minus' class='operator' value='-'>-</button></td>
+			  <td><button name = 'multiply' class='operator' value='*'>*</button></td>
+			  <td><button name = 'divide' class='operator' value='/'>/</button></td>
+      </tr>
+      <tr class="numbers">
+			  <td><button name = 'seven' class='num' value='7'>7</button></td>
+			  <td><button name = 'eight' class='num' value='8'>8</button></td>
+			  <td><button name = 'nine' class='num' value='9'>9</button></td>
+      </tr>  
+      <tr>
+			  <td><button name = 'four' class='num' value='4'>4</button></td>
+			  <td><button name = 'five' class='num' value='5'>5</button></td>
+			  <td><button name = 'six' class='num' value='6'>6</button></td>
+      </tr>  
+	  <tr>
+			  <td><button name = 'one' class='num' value='1'>1</button></td>
+			  <td><button name = 'two' class='num' value='2'>2</button></td>
+			  <td><button name = 'three' class='num' value='3'>3</button></td>
+      </tr>  
+	  <tr>
+			  <td><button name = 'zero' class='num' value='0'>0</button></td>
+			  <td><button name = 'period' class='num' value='.'>.</button></td>
+  	  </tr>
+      <tr class="helpers">
+			  <td><button name = 'negate' class='helper' value='+/-'>+/-</button></td>
+			  <td><button name = 'clear' class='helper' value='C'>C</button></td>
+			  <td><button name = 'equal' class='helper' value='='>=</button></td>
+      </tr>  
+      </tr>    
+	</table> 
+	</section>            
     </section>
-        <script src="main.js"></script>
-        <script src="bower_components/lodash/dist/lodash.js"></script>
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="main.js"></script>
+      <script src="bower_components/lodash/dist/lodash.js"></script>
   </body>
 </html>

@@ -11,26 +11,19 @@ background-color: lightblue;
 border-radius: 5px;
 }
 
-input.number {
+#displayoutput {
 height: 40px;
-width: 200px;
+width: 260px;
+background-color: #CCC;
+border-radius: 5px;
+margin-top: 5px;
+margin-left: 30px;
+color: black;
 }
 
-input {
+tr button {
 height: 50px;
 width: 50px;
-
-}
-
-div {
-padding-left: 70px;
-}
-
-.operators input {
-background-color: #D6F32C;
-
-}
-.display {
-background-color: #CCC;
-
+margin-top: 5px;
+margin-left: 20px;
 }

@@ -1,9 +1,9 @@
-/*$(document).ready(function(){
-var $body = document.getElementById("main");
-$body.
-	displayOutput();
-
-});*/
+$('document').ready(function(){
+var $table = document.querySelector("#main");
+$(":button").click(function(){
+  press($(this).text());
+});
+});
 
 function displayOutput(){
   return $('#displayoutput').val();
@@ -14,6 +14,10 @@ var nextOperation;
 
 function add(a, b){
   return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+}
+
+function subtract(a, b) {
+  return a - b;
 }
 
 function multiply(a, b){
@@ -57,9 +61,9 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case '-':
-      // handle -
-			
-			
+      calculate();
+			nextOperation = subtract;
+			$('#displayoutput').val('');
       break;
     case '*':
       calculate();
@@ -73,7 +77,7 @@ function press(buttonValue){
       break;
     case 'C':
       clear();
-      $('#displayoutput').val(0);			
+      $('#displayoutput').val('');			
       break;
     case '=':
       calculate();
